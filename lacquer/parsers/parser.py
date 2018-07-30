@@ -458,6 +458,8 @@ def p_predicate(p):
     r"""predicate : comparison_predicate
                   | between_predicate
                   | in_predicate
+                  | ilike_predicate
+                  | rlike_predicate
                   | like_predicate
                   | null_predicate
                   | exists_predicate"""
@@ -503,6 +505,18 @@ def p_in_expressions(p):
 def p_like_predicate(p):
     r"""like_predicate : value_expression not_opt LIKE value_expression"""
     p[0] = LikePredicate(p.lineno(1), p.lexpos(1), value=p[1], pattern=p[4])
+    _check_not(p)
+
+
+def p_ilike_predicate(p):
+    r"""ilike_predicate : value_expression not_opt ILIKE value_expression"""
+    p[0] = IlikePredicate(p.lineno(1), p.lexpos(1), value=p[1], pattern=p[4])
+    _check_not(p)
+
+
+def p_rlike_predicate(p):
+    r"""rlike_predicate : value_expression not_opt RLIKE value_expression"""
+    p[0] = RlikePredicate(p.lineno(1), p.lexpos(1), value=p[1], pattern=p[4])
     _check_not(p)
 
 

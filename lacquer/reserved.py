@@ -142,7 +142,7 @@ presto_tokens = (
     'ALTER', 'RENAME', 'UNNEST', 'ORDINALITY', 'ARRAY', 'MAP', 'SET', 'RESET', 'SESSION', 'DATA',
     'START', 'TRANSACTION', 'COMMIT', 'ROLLBACK', 'WORK', 'ISOLATION', 'LEVEL', 'SERIALIZABLE',
     'REPEATABLE', 'COMMITTED', 'UNCOMMITTED', 'READ', 'WRITE', 'ONLY', 'CALL', 'NORMALIZE', 'NFD',
-    'NFC', 'NFKD', 'NFKC', 'IF', 'NULLIF', 'COALESCE'
+    'NFC', 'NFKD', 'NFKC', 'IF', 'NULLIF', 'COALESCE', 'ILIKE', 'RLIKE'
 )
 
 presto_nonreserved = (

@@ -1,3 +1,5 @@
+*.egg
+*.egg-info
 *.o
 *.so
 *.os
@@ -5,10 +7,12 @@
 *_wrap.cc
 *Lib.py
 *~
+build/
 core.*
 .sconf_temp
 .sconsign.dblite
 config.log
+dist/
 doc/doxygen.conf
 doc/html
 doc/xml

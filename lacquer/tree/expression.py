@@ -251,6 +251,28 @@ class LikePredicate(Expression):
         return visitor.visit_like_predicate(self, context)
 
     
+class IlikePredicate(Expression):
+    def __init__(self, line=None, pos=None, value=None, pattern=None, escape=None):
+        super(IlikePredicate, self).__init__(line, pos)
+        self.value = value
+        self.pattern = pattern
+        self.escape = escape
+
+    def accept(self, visitor, context):
+        return visitor.visit_ilike_predicate(self, context)
+
+    
+class RlikePredicate(Expression):
+    def __init__(self, line=None, pos=None, value=None, pattern=None, escape=None):
+        super(RlikePredicate, self).__init__(line, pos)
+        self.value = value
+        self.pattern = pattern
+        self.escape = escape
+
+    def accept(self, visitor, context):
+        return visitor.visit_rlike_predicate(self, context)
+
+    
 class ExistsPredicate(Expression):
     def __init__(self, line=None, pos=None, subquery=None):
         super(ExistsPredicate, self).__init__(line, pos)

@@ -74,6 +74,12 @@ class ExpressionRewriter(object):
     def rewrite_lambda_expression(self, node, context, tree_rewriter):
         return self.rewrite_expression(node, context, tree_rewriter)
 
+    def rewrite_ilike_predicate(self, node, context, tree_rewriter):
+        return self.rewrite_expression(node, context, tree_rewriter)
+
+    def rewrite_rlike_predicate(self, node, context, tree_rewriter):
+        return self.rewrite_expression(node, context, tree_rewriter)
+
     def rewrite_like_predicate(self, node, context, tree_rewriter):
         return self.rewrite_expression(node, context, tree_rewriter)
 

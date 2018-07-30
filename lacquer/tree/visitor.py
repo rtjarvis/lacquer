@@ -198,6 +198,12 @@ class AstVisitor(object):
     def visit_searched_case_expression(self, node, context):
         return self.visit_expression(node, context)
 
+    def visit_ilike_predicate(self, node, context):
+        return self.visit_expression(node, context)
+
+    def visit_rlike_predicate(self, node, context):
+        return self.visit_expression(node, context)
+
     def visit_like_predicate(self, node, context):
         return self.visit_expression(node, context)
 
